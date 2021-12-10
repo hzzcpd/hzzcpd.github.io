@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)http://sep.gausanzz.com/tb000/21jiu/santemp/model/zhejiang/higner.html?codeno=22 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="Cache-control" content="no-cache"> 
+  <meta http-equiv="Cache" content="no-cache"> 
+  <title>高级专业技术职务任职资格证书打印</title> 
+  <script type="text/javascript" src="static/js/jquery-3.2.1.js.js"></script> 
+  <!--引入政府服务网的头部和尾部的css--> 
+  <!--  <script type="text/javascript" src="static/js/switchwebsitebannerzt.js"></script> --> 
+  <!--引入浙江人社服务平台的ui css--> 
+  <script type="text/javascript" src="static/js/jszjhrss.js.js"></script> 
+  <script type="text/javascript" src="static/js/zjhrss.js"></script> 
+  <script src="static/js/713e00e779054a719e01a5da86c27c37.js"></script> 
+  <link rel="stylesheet" href="static/css/zjhrss-pc-zj.css" type="text/css"> 
+  <script type="text/javascript" src="static/js/indexczj.js.js"></script> 
+  <script src="static/js/jquery.min.js"></script>
+  <style>
+        .margin{
+            margin:30px 0;
+        }
+        .margin1{
+            margin:30px 0 0;
+        }
+        .width1{
+            width:80%;
+        }
+        .nomeg{
+            width: 75%;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 5px;
+            font-size:16px;
+        }
+    </style> 
+  <link type="text/css" rel="stylesheet" href="static/css/zjhrss-pc-zj(1).css">
+ <link type="text/css" rel="stylesheet" href="static/css/zjhrss-pc-zj(2).css"></head> 
+ <body style=""> 
+  <div style="width:1000px;margin:0 auto;"> 
+   <div id="cxBox" style="display: none;"> 
+    <button class="zjhrss-text-left zjhrss-btn zjhrss-btn-raised zjhrss-ripple zjhrss-color-assist-4 zjhrss-color-main-1 zjhrss-btn-block">高级专业技术职务任职资格证书打印</button> 
+    <div class="zjhrss-center" style="width:30%;margin:50px 0;"> 
+     <div class="zjhrss-textfield"> 
+      <label class="zjhrss-textfield-label">证书校验码</label> 
+      <input class="zjhrss-textfield-input" type="text" id="verifyCode" value=""> 
+     </div> 
+     <div class="zjhrss-center width1"> 
+      <button class="zjhrss-btn zjhrss-btn-raised zjhrss-ripple zjhrss-color-main-1 zjhrss-btn-block zjhrss-colortext-assist-5" onClick="query()">查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;询</button> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="jgBox" style=""> 
+   
+    <div class="zjhrss-center width1 margin" id="resultBox">
+     <div class="zjhrss-table-fluid  margin1">
+      <table class="zjhrss-table">
+       <thead> 
+        <tr>
+         <th colspan="2" class="zjhrss-text-lef zjhrss-color-assist-3 zjhrs-textsize-32">浙江省高级专业技术职务任职资格证书&nbsp;&nbsp; </th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td>姓名：&nbsp;<span style="font-family:SimSun" id="name">*军</span></td>
+         <td>身份证号：&nbsp;<span class="Idcard" id="id">4****************7</span></td> 
+        </tr>
+        <tr>
+         <td>资格名称：&nbsp;<span class="zgname" id="zige">高级工程师</span></td>
+         <td>专业名称：&nbsp;<span class="zyname" id="zhuanye">测绘</span></td> 
+        </tr>
+        <tr>
+         <td>取得资格时间：&nbsp;<span class="qddate" id="date">2015年12月31日</span></td>
+         <td>评委会名称：&nbsp;<span class="pwname" id="pingwei">省教授级高级工程师任职资格评审委员会</span></td>
+        </tr> 
+       </tbody> 
+      </table> 
+     </div>
+    </div> 
+   </div> 
+  </div> 
+ <script type="text/javascript">
+    var zhengshu = "";
+    
+       function getUrl() {
+    var url = location.search; 
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+       var str = url.substr(1);
+       strs = str.split("&");
+       for(var i = 0; i < strs.length; i ++) {
+           theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+       }
+    }
+    return theRequest;
+}
+      function init() {
+        var get_url = getUrl();
+        zhengshu = get_url["codeno"];
+        //$('#zhengshu').html(zhengshu);
+    //   alert(zhengshu);
+        $.getJSON("./js/user.json",
+        
+        function(data) {
+          $.each(data,function(index, info) {
+              
+            if (info["zhengshu"] == zhengshu) {
+               // alert(info["name"])
+             $('#name').html(""+info["name"]);
+             $('#date').html(""+info["date"]);
+             $('#id').html(""+info["id"]);
+             $('#pingwei').html(""+info["pingwei"]);
+             $('#zhuanye').html(""+info["zhuanye"]);
+             $('#zige').html(""+info["zige"]);
+            return false;
+            }
+          })
+        })
+      }
+      init();</script>
+ 
+</body></html>
